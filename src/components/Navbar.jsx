@@ -58,6 +58,7 @@ const Navbar = () => {
                     href={
                       item.href.startsWith("#") ? `/${item.href}` : item.href
                     }
+                    onClick={toggleNavbar}
                   >
                     {item.label}
                   </a>
@@ -65,12 +66,17 @@ const Navbar = () => {
               ))}
             </ul>
             <div className="flex space-x-6">
-              <Link to="/login" className="py-2 px-3 border rounded-md">
+              <Link
+                to="/login"
+                className="py-2 px-3 border rounded-md"
+                onClick={toggleNavbar}
+              >
                 Login{" "}
               </Link>
               <Link
                 to="/create-account"
                 className="py-2 px-3 rounded-md bg-linear-to-r form-orange-500 to-orange-800"
+                onClick={toggleNavbar}
               >
                 Create an account
               </Link>
