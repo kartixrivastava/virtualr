@@ -2,7 +2,10 @@ import { features } from "../constants";
 
 const FeatureSection = () => {
   return (
-    <div className="relative mt-20 border-b border-neutral-800 min-h-200">
+    <div
+      id="features"
+      className="relative mt-20 border-b border-neutral-800 min-h-200"
+    >
       <div className="text-center">
         <h2 className="text-3xl sm:text-5xl lg:text-6xl mt-10 lg:mt-20 tracking-wide">
           Easily build your
@@ -34,4 +37,3 @@ const FeatureSection = () => {
 };
 
 export default FeatureSection;
-

@@ -2,6 +2,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import logo from "../assets/logo.png";
 import { navItems } from "../constants";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const [linksOpen, setLinksOpen] = useState(false);
 
@@ -21,22 +22,27 @@ const Navbar = () => {
           <ul className="hidden lg:flex ml-14 space-x-12 ">
             {navItems.map((item, idx) => (
               <li key={idx}>
-                <a href={item.href}>{item.label}</a>
+                <a
+                  href={item.href.startsWith("#") ? `/${item.href}` : item.href}
+                >
+                  {item.label}
+                </a>
               </li>
             ))}
           </ul>
           {/* BUTTONS */}
           <div className="hidden lg:flex justify-center space-x-12 items-center">
-            <a href="#" className="py-2 px-3 border rounded-md">
-              Sign In
-            </a>
-            <a
-              href="#"
+            <Link to="/login" className="py-2 px-3 border rounded-md">
+              Login
+            </Link>
+            <Link
+              to="/create-account"
               className="bg-linear-to-r from-orange-500 to-orange-800 py-2 px-3 rounded-md "
             >
               Create an account
-            </a>
+            </Link>
           </div>
+
           <div className="lg:hidden md:flex flex-col justify-end">
             <button onClick={toggleNavbar}>
               {linksOpen ? <X /> : <Menu />}
@@ -48,20 +54,26 @@ const Navbar = () => {
             <ul>
               {navItems.map((item, idx) => (
                 <li key={idx} className="py-4 ">
-                  <a href={item.href}>{item.label}</a>
+                  <a
+                    href={
+                      item.href.startsWith("#") ? `/${item.href}` : item.href
+                    }
+                  >
+                    {item.label}
+                  </a>
                 </li>
               ))}
             </ul>
             <div className="flex space-x-6">
-              <a href="#" className="py-2 px-3 border rounded-md">
-                Sign In{" "}
-              </a>
-              <a
-                href="#"
+              <Link to="/login" className="py-2 px-3 border rounded-md">
+                Login{" "}
+              </Link>
+              <Link
+                to="/create-account"
                 className="py-2 px-3 rounded-md bg-linear-to-r form-orange-500 to-orange-800"
               >
                 Create an account
-              </a>
+              </Link>
             </div>
           </div>
         )}
