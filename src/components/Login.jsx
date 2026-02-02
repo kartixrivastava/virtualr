@@ -17,7 +17,7 @@ const Login = () => {
             <input
               type="email"
               className="w-full px-4 py-3 rounded-md bg-neutral-800 border border-neutral-700 text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors"
-              placeholder="john@example.com"
+              placeholder="kartik@gmail.com"
             />
           </div>
 
